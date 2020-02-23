@@ -1,0 +1,10 @@
+SELECT
+  name, year,
+  SUM(number) as total
+FROM
+  `bigquery-public-data.usa_names.usa_1910_2013`
+  where name = "Sandy" AND year BETWEEN 2006 AND 2018
+  GROUP BY
+  name, year
+ORDER BY
+  total DESC
